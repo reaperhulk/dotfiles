@@ -1,4 +1,6 @@
 #!/bin/bash
+#This file will symlink the dotfiles from this directory to your home dir.
+#You can use this to leave your dotfiles in dropbox to sync between machines
 read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
