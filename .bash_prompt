@@ -45,7 +45,7 @@ function parse_svn_dirty {
 }
 
 function parse_svn_revision {
-  svn_revision="`svn info 2> /dev/null | grep "Revision:" --color=never | sed -e "s/Revision:/svn:/"`$(parse_svn_dirty)"
+  svn_revision="`svn info 2> /dev/null | grep "Revision:" --color=never | sed -e "s/Revision: /r/"`$(parse_svn_dirty)"
   if [ "$svn_revision" != "" ]
   then
     echo " (${svn_revision})"
