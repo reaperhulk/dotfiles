@@ -95,11 +95,6 @@ map <C-L> <C-W>l
 noremap j gj
 noremap k gk
 
-" Keep search matches in the middle of the window and pulse the line when
-" moving to them.
-nnoremap n nzzzv<cr>
-nnoremap N Nzzzv<cr>
-
 
 "sets a backup dir to prevent ~ and .swp files from being generated in the
 "same directory as the edited file.
