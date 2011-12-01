@@ -18,3 +18,8 @@ export PROMPT_COMMAND="history -a; history -n"
 
 #default grep to color-rific
 export GREP_OPTIONS='--color=auto'
+
+#requires ~/.dotfiles-bin unless you happen to have lesspipe in your command path already.
+export LESSOPEN="|"$HOME"/.dotfiles-bin/lesspipe.sh %s"
+#turns on color support in less. works with code2color+lesspipe
+#export LESS="-R"

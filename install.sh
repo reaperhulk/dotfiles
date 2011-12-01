@@ -20,6 +20,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rm -rf ~/.vim
     ln -sf $CWD/.vim ~/.vim
     ln -sf $CWD/.vimrc ~/.vimrc
+    ln -sf $CWD/.dotfiles-bin ~/.dotfiles-bin
     mkdir -p ~/.vim-tmp
     source "$HOME/.bash_profile"
 fi
