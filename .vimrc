@@ -12,8 +12,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 filetype plugin on      " use the file type plugins
+colorscheme impact
 
 set scrolloff=5 "keep at least 5 lines above/below
+
+
 
 
 " Wildmenu completion {{{
