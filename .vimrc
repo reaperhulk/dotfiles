@@ -105,55 +105,6 @@ set directory=~/.vim-tmp
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
-"does what it's named. pulses the line the cursor is on
-function! PulseCursorLine()
-    let current_window = winnr()
-
-    windo set nocursorline
-    execute current_window . 'wincmd w'
-
-    setlocal cursorline
-
-    redir => old_hi
-        silent execute 'hi CursorLine'
-    redir END
-    let old_hi = split(old_hi, '\n')[0]
-    let old_hi = substitute(old_hi, 'xxx', '', '')
-
-    hi CursorLine guibg=#2a2a2a ctermbg=233
-    redraw
-    sleep 1m
-
-    hi CursorLine guibg=#333333 ctermbg=235
-    redraw
-    sleep 1m
-
-    hi CursorLine guibg=#3a3a3a ctermbg=237
-    redraw
-    sleep 1m
-
-    hi CursorLine guibg=#444444 ctermbg=239
-    redraw
-    sleep 1m
-
-    hi CursorLine guibg=#3a3a3a ctermbg=237
-    redraw
-    sleep 1m
-
-    hi CursorLine guibg=#333333 ctermbg=235
-    redraw
-    sleep 1m
-
-    hi CursorLine guibg=#2a2a2a ctermbg=233
-    redraw
-    sleep 1m
-
-    execute 'hi ' . old_hi
-
-    windo set nocursorline
-    execute current_window . 'wincmd w'
-endfunction
-
 "return '[&et]' if &et is set wrong
 "return '[mixed-indenting]' if spaces and tabs are used to indent
 "return an empty string if everything is fine
