@@ -17,6 +17,8 @@ colorscheme impact
 set scrolloff=5 "keep at least 5 lines above/below
 
 
+"disable creation of .vim/.netrwhist files when you accidentally vim a dir
+let g:netrw_dirhistmax=0
 
 
 " Wildmenu completion {{{
@@ -107,6 +109,11 @@ set directory=~/.vim-tmp
 "syntastic settings
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+
+"supertab settings
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<tab>'
 
 "return '[&et]' if &et is set wrong
 "return '[mixed-indenting]' if spaces and tabs are used to indent
