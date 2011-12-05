@@ -1,9 +1,10 @@
-set nocompatible        "remove vi compatibility. 
+set nocompatible        "remove vi compatibility.
 set showcmd             "shows incomplete cmds in lower right
 set number              "show line number gutter
 set ai                  " auto indenting
 set history=100         " keep 100 lines of history
 syntax on               " syntax highlighting
+set synmaxcol=300       "default is 3000, can bog down editing files with very long lines
 set encoding=utf8
 set incsearch           "incremental search
 set hlsearch            " highlight the last searched term
@@ -19,6 +20,9 @@ set scrolloff=5 "keep at least 5 lines above/below
 
 "disable creation of .vim/.netrwhist files when you accidentally vim a dir
 let g:netrw_dirhistmax=0
+
+autocmd BufWritePre * :%s/\s\+$//e "remove trailing spaces on saves
+let &showbreak=repeat(' ', 2) "add some indentation to wrapped lines
 
 
 " Wildmenu completion {{{
