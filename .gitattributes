@@ -1,1 +1,1 @@
-* text=auto
+#* text=auto #this does the conversion to LF on commit stuff (you can add this to a local repo as .gitattributes)
