@@ -1,5 +1,3 @@
-# http://iain.nl/customizing-irb-2010-edition
-# https://github.com/iain/osx_settings/blob/master/.irbrc
 require 'rubygems'
 require 'yaml'
 require 'irb/completion'
