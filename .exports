@@ -14,7 +14,8 @@ export HISTTIMEFORMAT="%D %T "
 # save each command right after execution
 # more detail (and possible better solution) can be found here
 # http://stackoverflow.com/questions/103944/real-time-history-export-amongst-bash-terminal-windows
-export PROMPT_COMMAND="history -a; history -n"
+# export PROMPT_COMMAND="history -a; history -n"
+export PROMPT_COMMAND="history -a"
 
 #default grep to color-rific
 export GREP_OPTIONS='--color=auto'
@@ -27,3 +28,4 @@ export LESSOPEN="|"$HOME"/.dotfiles-bin/lesspipe.sh %s"
 # need this for the fucking mysql gem?! wtf
 # http://stackoverflow.com/questions/6340174/mysql-gem-on-osx-10-7-lion
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+export PATH="~/Applications/bin:$PATH"
