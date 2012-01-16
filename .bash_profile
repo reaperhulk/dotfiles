@@ -5,9 +5,6 @@ for file in ~/.{bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
-
 # append history
 shopt -s histappend
 
