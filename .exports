@@ -28,4 +28,4 @@ export LESSOPEN="|"$HOME"/.dotfiles-bin/lesspipe.sh %s"
 # need this for the fucking mysql gem?! wtf
 # http://stackoverflow.com/questions/6340174/mysql-gem-on-osx-10-7-lion
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
-export PATH="~/Applications/bin:$PATH"
+export PATH="~/Applications/bin:/usr/local/sbin:$PATH"
