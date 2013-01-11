@@ -13,6 +13,9 @@ defaults write com.apple.dock autohide -bool false
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
+# Enable the ability to highlight text in QuickLook
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
 # Disable menu bar transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
