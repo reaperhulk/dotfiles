@@ -17,6 +17,8 @@ colorscheme impact
 
 set scrolloff=5 "keep at least 5 lines above/below
 
+let g:indent_guides_enable_on_vim_startup = 1
+
 
 "disable creation of .vim/.netrwhist files when you accidentally vim a dir
 let g:netrw_dirhistmax=0

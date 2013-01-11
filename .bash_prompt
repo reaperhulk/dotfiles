@@ -40,26 +40,11 @@ function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-function parse_svn_dirty {
-  [[ $(svn st 2> /dev/null) != "" ]] && echo "*"
-}
-
-function parse_svn_revision {
-  svn_revision="`svn info 2> /dev/null | grep "Revision:" --color=never | sed -e "s/Revision: /r/"`$(parse_svn_dirty)"
-  if [ "$svn_revision" != "" ]
-  then
-    echo " (${svn_revision})"
-  fi
-  echo 
-}
-
 function parse_source_info {
   GITINFO=`parse_git_branch`
   if [[ $GITINFO != '' ]]
   then
     echo $GITINFO
-  else
-    parse_svn_revision
   fi
 }
 
