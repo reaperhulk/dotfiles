@@ -13,6 +13,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 filetype plugin on      " use the file type plugins
+filetype plugin indent on
 colorscheme impact
 
 set scrolloff=5 "keep at least 5 lines above/below
@@ -21,9 +22,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 set autochdir
 let NERDTreeChDirMode=2
+let NERDTreeMinimalUI=1
+
 nnoremap <leader>n :NERDTree .<CR>
 
 nnoremap <leader>f :CtrlP<CR>
+
+nnoremap <leader>rr :call Convert4SpaceTo2Space()<CR>
 
 "disable creation of .vim/.netrwhist files when you accidentally vim a dir
 let g:netrw_dirhistmax=0
@@ -174,3 +179,18 @@ function! StatuslineCurrentHighlight()
         return '[' . name . ']'
     endif
 endfunction
+
+function! Convert4SpaceTo2Space()
+    " convert spaces to tabs first
+    set noexpandtab
+    set tabstop=4
+    set shiftwidth=4
+    retab!
+    " now you have tabs instead of spaces, so insert spaces according to
+    " your new preference
+    set tabstop=2
+    set shiftwidth=2
+    set expandtab
+    retab!
+endfunction
+

@@ -30,5 +30,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #ruby specific
     ln -sf $CWD/.gemrc ~/.gemrc
     ln -sf $CWD/.irbrc ~/.irbrc
+    ln -sf $CWD/.rvmrc ~/.rvmrc
     source "$HOME/.bash_profile"
 fi

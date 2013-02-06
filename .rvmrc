@@ -1,0 +1,4 @@
+# have rvm build ruby in parallel with the # of threads matching
+# the quantity of CPUs available
+cpus=`sysctl -n hw.ncpu`
+rvm_make_flags="-j$cpus"
