@@ -25,6 +25,7 @@ export LESSOPEN="|"$HOME"/.dotfiles-bin/lesspipe.sh %s"
 #turns on color support in less. works with code2color+lesspipe
 #export LESS="-R"
 
-export PATH="~/Applications/bin:/usr/local/sbin:$PATH"
+export PATH="~/Applications/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/share/python:$PATH" # add python from brew so we get virtualenv, etc
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH

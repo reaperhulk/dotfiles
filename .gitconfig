@@ -45,3 +45,5 @@
     st = status
     ci = commit
     pom = push origin master
+[gitreview]
+	username = reaperhulk

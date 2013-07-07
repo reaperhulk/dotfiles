@@ -4,7 +4,7 @@ set number              "show line number gutter
 set ai                  " auto indenting
 set history=100         " keep 100 lines of history
 syntax on               " syntax highlighting
-set synmaxcol=300       "default is 3000, can bog down editing files with very long lines
+set synmaxcol=500       "default is 3000, can bog down editing files with very long lines
 set encoding=utf8
 set incsearch           "incremental search
 set hlsearch            " highlight the last searched term
@@ -12,9 +12,40 @@ set expandtab           "use spaces instead of tabs
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-filetype plugin on      " use the file type plugins
+set ttimeoutlen=50      " set timeout length when hitting escape (prevents pause when leaving insert mode with vim-airline)
+filetype off "for some resaon vundle needs this off
+
+" Vundle config
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+"my bundles
+Bundle 'bling/vim-airline'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'bufexplorer.zip'
+Bundle 'matchit.zip'
+
+" colorscheme bundle
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Impact'
+
+" Brief help
+" :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+
+filetype plugin on      "you can then turn them back on after loading via vundle
 filetype plugin indent on
-colorscheme impact
+
+colorscheme impact "cli color scheme
 
 set scrolloff=5 "keep at least 5 lines above/below
 
@@ -26,8 +57,6 @@ let NERDTreeMinimalUI=1
 
 nnoremap <leader>n :NERDTree .<CR>
 
-nnoremap <leader>f :CtrlP<CR>
-
 nnoremap <leader>rr :call Convert4SpaceTo2Space()<CR>
 
 "disable creation of .vim/.netrwhist files when you accidentally vim a dir
@@ -35,6 +64,11 @@ let g:netrw_dirhistmax=0
 
 autocmd BufWritePre * :%s/\s\+$//e "remove trailing spaces on saves
 let &showbreak=repeat(' ', 2) "add some indentation to wrapped lines
+
+" status line {{{
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+" }}}
 
 
 " Wildmenu completion {{{
@@ -55,56 +89,6 @@ set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 
 " }}}
-
-" Status line ------------------------------------------------------------- {{{
-set statusline=%f       "tail of the filename
-
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-set statusline+=%r      "read only flag
-set statusline+=%m      "modified flag
-
-"display a warning if &et is wrong, or we have mixed-indenting
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-
-set statusline+=%{StatuslineTrailingSpaceWarning()}
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-
-set statusline+=%=      "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-set laststatus=2
-
-"recalculate the trailing whitespace warning when idle, and after saving
-autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
-
-"recalculate the tab warning flag when idle and after writing
-autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
-
-" }}}
-
 
 "buffer navigation ctrl-j/h/k/l
 map <C-J> <C-W>j
@@ -149,35 +133,6 @@ function! StatuslineTabWarning()
         endif
     endif
     return b:statusline_tab_warning
-endfunction
-
-"return '[\s]' if trailing white space is detected
-"return '' otherwise
-function! StatuslineTrailingSpaceWarning()
-    if !exists("b:statusline_trailing_space_warning")
-
-        if !&modifiable
-            let b:statusline_trailing_space_warning = ''
-            return b:statusline_trailing_space_warning
-        endif
-
-        if search('\s\+$', 'nw') != 0
-            let b:statusline_trailing_space_warning = '[\s]'
-        else
-            let b:statusline_trailing_space_warning = ''
-        endif
-    endif
-    return b:statusline_trailing_space_warning
-endfunction
-
-"return the syntax highlight group under the cursor ''
-function! StatuslineCurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        return ''
-    else
-        return '[' . name . ']'
-    endif
 endfunction
 
 function! Convert4SpaceTo2Space()
