@@ -13,7 +13,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set ttimeoutlen=50      " set timeout length when hitting escape (prevents pause when leaving insert mode with vim-airline)
-filetype off "for some resaon vundle needs this off
+" Show “invisible” characters
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set list
+" Show the filename in the window titlebar
+set title
+filetype off "for some reason vundle needs this off
 
 " Vundle config
 set rtp+=~/.vim/bundle/vundle/
