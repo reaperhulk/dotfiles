@@ -26,14 +26,16 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-"my bundles
+" my bundles
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'tpope/vim-fugitive'
 Bundle 'bufexplorer.zip'
 Bundle 'matchit.zip'
+Bundle 'jnwhiteh/vim-golang'
 
 " colorscheme bundle
 Bundle 'altercation/vim-colors-solarized'
@@ -70,7 +72,8 @@ let g:netrw_dirhistmax=0
 autocmd BufWritePre * :%s/\s\+$//e "remove trailing spaces on saves
 let &showbreak=repeat(' ', 2) "add some indentation to wrapped lines
 
-" status line {{{
+" statusline {{{
+let g:airline_powerline_fonts=1
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 " }}}

@@ -7,6 +7,8 @@ alias -- -="cd -"
 # Open the current directory in NERDTree in MacVIM
 alias nvim="mvim +NERDTree ."
 
+alias listen="sudo lsof -l -P | grep 'LISTEN'"
+
 #run mongod
 alias mongo_run="mongod run --config /usr/local/Cellar/mongodb/2.0.4-x86_64/mongod.conf"
 
