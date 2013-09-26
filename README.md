@@ -1,5 +1,4 @@
-# Mathias’s dotfiles (reaperhulk's fork)
-## This fork has diverged significantly from https://github.com/mathiasbynens/dotfiles
+# dotfiles
 
 ## Installation
 
@@ -8,3 +7,8 @@ git clone https://github.com/reaperhulk/dotfiles.git && cd dotfiles && ./install
 ```
 
 This will create symlinks, not copy. You can then update with a fresh git pull at any time.
+
+##Requirements
+Assumes the presence of the following from brew (or other sources):
+* ack
+* ctags (exuberant, not default OS X)
