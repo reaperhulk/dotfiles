@@ -27,15 +27,28 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " my bundles
+" nice statusline
 Bundle 'bling/vim-airline'
+" syntax checking and such
 Bundle 'scrooloose/syntastic'
+" ctrl-p for quick searching
 Bundle 'kien/ctrlp.vim'
+" nerdtree obviously
 Bundle 'scrooloose/nerdtree'
+" visual indent guides
 Bundle 'nathanaelkane/vim-indent-guides'
+" git integration
 Bundle 'tpope/vim-fugitive'
+" buffer explorer
 Bundle 'bufexplorer.zip'
+" adds better begin/end matching for various blocks
 Bundle 'matchit.zip'
+" golang support
 Bundle 'jnwhiteh/vim-golang'
+" adds leader-leader commenting
+Bundle 'tpope/vim-commentary'
+" allow calling ack via :Ack
+Bundle 'mileszs/ack.vim'
 
 " colorscheme bundle
 Bundle 'altercation/vim-colors-solarized'
@@ -48,6 +61,13 @@ Bundle 'Impact'
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
+
+" ident guide flags
+let g:indent_guides_exclude_filetypes = ['nerdtree']
+
+" syntastic flags
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E128'
 
 filetype plugin on      "you can then turn them back on after loading via vundle
 filetype plugin indent on

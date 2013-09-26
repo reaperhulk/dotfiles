@@ -21,6 +21,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -sf $CWD/.gitattributes ~/.gitattributes
     ln -sf $CWD/.gitconfig ~/.gitconfig
     ln -sf $CWD/.gitignore ~/.gitignore
+    ln -sf $CWD/.git_template ~/.git_template
+    ln -sf $CWD/.git-completion.sh ~/.git-completion.sh
     #vim specific
     ln -sf $CWD/.gvimrc ~/.gvimrc
     rm -rf ~/.vim

@@ -22,5 +22,13 @@ complete -W "NSGlobalDomain" defaults
 # Only show directories when autocompleting using cd or rmdir
 complete -d cd rmdir
 
+#pyenv
+[[ -s $HOME/.pyenv/bin/pyenv ]] && export PATH="$HOME/.pyenv/bin:$PATH"
+[[ -s $HOME/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)"
+#add virtualenvwrapper if it's there
+[[ -s $HOME/.pyenv/plugins ]] && pyenv virtualenvwrapper_lazy
+
 #add rvm if it's there
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+source ~/.git-completion.sh

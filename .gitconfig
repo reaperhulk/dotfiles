@@ -47,3 +47,5 @@
     pom = push origin master
 [gitreview]
 	username = reaperhulk
+[init]
+	templatedir = ~/.git_template
