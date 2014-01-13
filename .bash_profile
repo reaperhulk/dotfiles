@@ -25,10 +25,15 @@ complete -d cd rmdir
 #pyenv
 [[ -s $HOME/.pyenv/bin/pyenv ]] && export PATH="$HOME/.pyenv/bin:$PATH"
 [[ -s $HOME/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)"
+#temp workaround for newer pyenv on non-work laptop
+if type pyenv >/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
 #add virtualenvwrapper if it's there
 [[ -s $HOME/.pyenv/plugins ]] && pyenv virtualenvwrapper_lazy
 
 #add rvm if it's there
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 source ~/.git-completion.sh

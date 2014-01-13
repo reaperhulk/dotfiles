@@ -24,18 +24,6 @@
     untracked = cyan
 [merge]
     log = true
-[url "git@github.com:"]
-    insteadOf = "gh:"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-    insteadOf = "github:"
-[url "git@gist.github.com:"]
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-    insteadOf = "gist:"
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     fix = commit --amend
@@ -45,7 +33,8 @@
     st = status
     ci = commit
     pom = push origin master
+    rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
 [gitreview]
-	username = reaperhulk
-[init]
-	templatedir = ~/.git_template
+    username = reaperhulk
+#[init]
+#    templatedir = ~/.git_template

@@ -14,7 +14,7 @@ set softtabstop=4
 set shiftwidth=4
 set ttimeoutlen=50      " set timeout length when hitting escape (prevents pause when leaving insert mode with vim-airline)
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:▸\ ,trail:·
 set list
 " Show the filename in the window titlebar
 set title
@@ -47,8 +47,9 @@ Bundle 'matchit.zip'
 Bundle 'jnwhiteh/vim-golang'
 " adds leader-leader commenting
 Bundle 'tpope/vim-commentary'
-" allow calling ack via :Ack
-Bundle 'mileszs/ack.vim'
+" up to date markdown syntax
+Bundle 'tpope/vim-markdown'
+
 
 " colorscheme bundle
 Bundle 'altercation/vim-colors-solarized'
@@ -67,7 +68,7 @@ let g:indent_guides_exclude_filetypes = ['nerdtree']
 
 " syntastic flags
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E128'
+let g:syntastic_python_flake8_args=''
 
 filetype plugin on      "you can then turn them back on after loading via vundle
 filetype plugin indent on
@@ -81,6 +82,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 set autochdir
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
+let NERDTreeIgnore = ['\.pyc$']
 
 nnoremap <leader>n :NERDTree .<CR>
 
