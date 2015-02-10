@@ -29,5 +29,3 @@ export PATH="~/Applications/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Disables Python 2.6+ from writing pyc/pyo files
 export PYTHONDONTWRITEBYTECODE=1
-
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
