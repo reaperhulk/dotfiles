@@ -23,53 +23,51 @@ set title
 filetype off "for some reason vundle needs this off
 
 " Vundle config
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle.vim'
 " my bundles
 " nice statusline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " syntax checking and such
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " ctrl-p for quick searching
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " nerdtree obviously
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " visual indent guides
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 " git integration
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " buffer explorer
-Bundle 'bufexplorer.zip'
+Plugin 'bufexplorer.zip'
 " adds better begin/end matching for various blocks
-Bundle 'matchit.zip'
+Plugin 'matchit.zip'
 " adds leader-leader commenting
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 " adds gutter for added/changed/deleted lines
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 " ag search (requires ag)
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " rust language support
-Bundle 'wting/rust.vim'
+Plugin 'wting/rust.vim'
 " golang support
-Bundle 'jnwhiteh/vim-golang'
+Plugin 'jnwhiteh/vim-golang'
 " up to date markdown syntax
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " colorscheme bundle
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Impact'
-
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/Impact'
 " Brief help
-" :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
+call vundle#end()
+
 
 " ident guide flags
 let g:indent_guides_exclude_filetypes = ['nerdtree']
