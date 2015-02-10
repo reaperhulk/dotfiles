@@ -8,7 +8,7 @@ git clone https://github.com/reaperhulk/dotfiles.git && cd dotfiles && ./install
 
 This will create symlinks, not copy. You can then update with a fresh git pull at any time.
 
-You will need to separately install vundle and then run `:BundleInstall` before vim will
+You will need to separately install vundle and then run `:PluginInstall` before vim will
 work properly.
 
 ##Requirements
