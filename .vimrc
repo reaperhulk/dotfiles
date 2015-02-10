@@ -13,6 +13,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set ttimeoutlen=50      " set timeout length when hitting escape (prevents pause when leaving insert mode with vim-airline)
+set ttyfast
+set encoding=utf-8 nobomb
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·
 set list
@@ -43,13 +45,19 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bufexplorer.zip'
 " adds better begin/end matching for various blocks
 Bundle 'matchit.zip'
-" golang support
-Bundle 'jnwhiteh/vim-golang'
 " adds leader-leader commenting
 Bundle 'tpope/vim-commentary'
+" adds gutter for added/changed/deleted lines
+Bundle 'airblade/vim-gitgutter'
+" ag search (requires ag)
+Bundle 'rking/ag.vim'
+
+" rust language support
+Bundle 'wting/rust.vim'
+" golang support
+Bundle 'jnwhiteh/vim-golang'
 " up to date markdown syntax
 Bundle 'tpope/vim-markdown'
-
 
 " colorscheme bundle
 Bundle 'altercation/vim-colors-solarized'
@@ -66,10 +74,6 @@ Bundle 'Impact'
 " ident guide flags
 let g:indent_guides_exclude_filetypes = ['nerdtree']
 
-" syntastic flags
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args=''
-
 filetype plugin on      "you can then turn them back on after loading via vundle
 filetype plugin indent on
 
@@ -79,14 +83,19 @@ set scrolloff=5 "keep at least 5 lines above/below
 
 let g:indent_guides_enable_on_vim_startup = 1
 
+let g:airline#extensions#hunks#enabled = 0
+
 set autochdir
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
-let NERDTreeIgnore = ['\.pyc$']
-
-nnoremap <leader>n :NERDTree .<CR>
+"let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.egg-info$', '__pycache__']
+noremap <C-T> :NERDTreeToggle<CR><C-W>=
 
 nnoremap <leader>rr :call Convert4SpaceTo2Space()<CR>
+
+nmap * :Ag <c-r>=expand("<cword>")<cr><cr>
+nnoremap <space>/ :Ag<space>
 
 "disable creation of .vim/.netrwhist files when you accidentally vim a dir
 let g:netrw_dirhistmax=0
@@ -138,7 +147,15 @@ set directory=~/.vim-tmp
 
 "syntastic settings
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
+let g:syntastic_check_on_open=1
+let g:syntastic_error_symbol="✗"
+let g:syntastic_warning_symbol="⚠"
+let g:syntastic_style_error_symbol="⚠"
+let g:syntastic_style_warning_symbol="⚠"
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args=''
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 
 function! Convert4SpaceTo2Space()
     " convert spaces to tabs first
