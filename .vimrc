@@ -68,6 +68,7 @@ Plugin 'vim-scripts/Impact'
 " see :h vundle for more details or wiki for FAQ
 call vundle#end()
 
+let g:ctrlp_custom_ignore = { 'file': '\.html$\|\.so$' }
 
 " ident guide flags
 let g:indent_guides_exclude_filetypes = ['nerdtree']
