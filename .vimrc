@@ -9,6 +9,7 @@ set encoding=utf8
 set incsearch           "incremental search
 set hlsearch            " highlight the last searched term
 set expandtab           "use spaces instead of tabs
+set cursorline
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -25,7 +26,7 @@ filetype off "for some reason vundle needs this off
 " Vundle config
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 " my bundles
 " nice statusline
 Plugin 'bling/vim-airline'
@@ -68,7 +69,12 @@ Plugin 'vim-scripts/Impact'
 " see :h vundle for more details or wiki for FAQ
 call vundle#end()
 
-let g:ctrlp_custom_ignore = { 'file': '\.html$\|\.so$' }
+" ignore html and so files for ctrl-p
+let g:ctrlp_custom_ignore = { 'file': '\.html$\|\.so$', 'dir': 'build\/lib' }
+
+" don't update the gitgutter unless saving a buffer
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 " ident guide flags
 let g:indent_guides_exclude_filetypes = ['nerdtree']
@@ -77,6 +83,11 @@ filetype plugin on      "you can then turn them back on after loading via vundle
 filetype plugin indent on
 
 colorscheme impact "cli color scheme
+
+" Turn off the active line underline in terminal
+" In terminal the line number does not highlight for some reason
+" but it does in gvim/macvim
+highlight CursorLine cterm=None
 
 set scrolloff=5 "keep at least 5 lines above/below
 
