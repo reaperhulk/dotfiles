@@ -54,9 +54,12 @@ Plugin 'rking/ag.vim'
 " rust language support
 Plugin 'wting/rust.vim'
 " golang support
-Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 " up to date markdown syntax
 Plugin 'tpope/vim-markdown'
+" clojure stuff
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-leiningen'
 
 " colorscheme bundle
 Plugin 'altercation/vim-colors-solarized'
@@ -180,4 +183,3 @@ function! Convert4SpaceTo2Space()
     set expandtab
     retab!
 endfunction
-

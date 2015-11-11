@@ -4,10 +4,23 @@ set background=dark
 colorscheme solarized
 " make the solarized sign column the same as the line number
 highlight SignColumn guibg=#073642
-highlight CursorLine guibg=#000000
 " vim-gitgutter will use Sign Column to set its color, reload it.
 call gitgutter#highlight#define_highlights()
 " make the background color black
 highlight Normal guibg=black
-set gfn:Inconsolata\ for\ Powerline:h14
+" set gfn:Inconsolata\ for\ Powerline:h14
+set gfn:Hack:h12
 set noballooneval       "disables tooltips hooray
+
+augroup NerdCursor
+  autocmd!
+  autocmd BufEnter NERD_tree_* hi CursorLine guibg=#073642
+  autocmd BufLeave NERD_tree_* highlight clear CursorLine
+  autocmd BufAdd * highlight clear CursorLine
+augroup END
+augroup BufExpCursor
+  autocmd!
+  autocmd BufEnter \[BufExplorer\] hi CursorLine guibg=#073642
+  autocmd BufLeave \[BufExplorer\] highlight clear CursorLine
+  autocmd BufAdd * highlight clear CursorLine
+augroup END
