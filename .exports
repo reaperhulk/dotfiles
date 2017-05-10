@@ -4,7 +4,7 @@ export EDITOR="vim"
 export MANPAGER="less -X"
 
 # Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
+export HISTSIZE=8000
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 # Make some commands not show up in history
@@ -25,7 +25,7 @@ export LESSOPEN="|"$HOME"/.dotfiles-bin/lesspipe.sh %s"
 #turns on color support in less. works with code2color+lesspipe
 #export LESS="-R"
 
-export PATH="~/Applications/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/Users/pkehrer/.cargo/bin:~/Applications/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Disables Python 2.6+ from writing pyc/pyo files
 export PYTHONDONTWRITEBYTECODE=1

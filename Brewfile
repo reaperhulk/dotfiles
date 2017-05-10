@@ -18,6 +18,7 @@ brew 'vim'
 mas 'Airmail 3', id: 918858936
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Pixelmator', id: 407963104
+mas 'Textual', id: 896450579
 mas 'Tweetbot', id: 557168941
 mas 'Xcode', id: 497799835
 tap 'caskroom/cask'
@@ -39,7 +40,6 @@ cask 'plex-media-player'
 cask 'screenhero'
 cask 'slack'
 cask 'steam'
-cask 'textual'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'vmware-fusion'

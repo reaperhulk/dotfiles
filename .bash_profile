@@ -1,6 +1,6 @@
 # Load ~/.bash_prompt, ~/.exports, ~/.aliases, ~/.functions and ~/.extra
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{bash_prompt,exports,aliases,functions,extra,secrets}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -27,13 +27,8 @@ if type pyenv >/dev/null 2>&1; then
     eval "$(pyenv init -)"
     pyenv virtualenvwrapper_lazy
 fi
-#add virtualenvwrapper if it's there
-# if type virtualenvwrapper_lazy.sh >/dev/null 2>&1; then
-#     source virtualenvwrapper_lazy.sh
-# fi
 
 #add rvm if it's there
-# [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 source ~/.git-completion.sh

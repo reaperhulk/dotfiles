@@ -3,3 +3,4 @@
 .vim/bundle
 htmlcov
 .pypirc
+.secrets

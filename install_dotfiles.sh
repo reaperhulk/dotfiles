@@ -30,6 +30,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -sf $CWD/.bash_prompt ~/.bash_prompt
     ln -sf $CWD/.bashrc ~/.bashrc
     ln -sf $CWD/.exports ~/.exports
+    ln -sf $CWD/.secrets ~/.secrets
     ln -sf $CWD/.inputrc ~/.inputrc
     ln -sf $CWD/.functions ~/.functions
     #lesspipe (used with LESSOPEN in bash exports)
