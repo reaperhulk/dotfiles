@@ -83,3 +83,5 @@ alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 alias thef="ssh thef.hopto.org -p 2222"
+
+alias workvpn='sudo openconnect $WORK_VPN_ENDPOINT --useragent "Cisco AnyConnect VPN Agent for Windows 4.4.02039" --os win'
