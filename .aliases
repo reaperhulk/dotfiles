@@ -4,9 +4,6 @@ alias ...="cd ../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-# Open the current directory in NERDTree in MacVIM
-alias nvim="mvim +NERDTree ."
-
 alias listen="sudo lsof -l -P | grep 'LISTEN'"
 
 # List only directories
@@ -26,7 +23,6 @@ alias cdgit='cd $(git rev-parse --show-toplevel)'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
@@ -85,3 +81,5 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-re
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+alias thef="ssh thef.hopto.org -p 2222"

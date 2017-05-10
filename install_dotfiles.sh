@@ -51,5 +51,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -sf $CWD/.gemrc ~/.gemrc
     ln -sf $CWD/.irbrc ~/.irbrc
     ln -sf $CWD/.rvmrc ~/.rvmrc
+    #python stuff
+    ln -sf $CWD/.pypirc ~/.pypirc
     source "$HOME/.bash_profile"
 fi

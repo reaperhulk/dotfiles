@@ -9,6 +9,7 @@ set encoding=utf8
 set incsearch           "incremental search
 set hlsearch            " highlight the last searched term
 set expandtab           "use spaces instead of tabs
+set backspace=indent,eol,start
 set cursorline
 set tabstop=4
 set softtabstop=4
@@ -31,9 +32,9 @@ Plugin 'gmarik/Vundle.vim'
 " nice statusline
 Plugin 'bling/vim-airline'
 " syntax checking and such
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 " ctrl-p for quick searching
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " nerdtree obviously
 Plugin 'scrooloose/nerdtree'
 " visual indent guides
@@ -61,6 +62,9 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-leiningen'
 
+" groovy
+Plugin 'rdolgushin/groovy.vim'
+
 " colorscheme bundle
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/Impact'
@@ -73,7 +77,7 @@ Plugin 'vim-scripts/Impact'
 call vundle#end()
 
 " ignore html and so files for ctrl-p
-let g:ctrlp_custom_ignore = { 'file': '\.html$\|\.so$', 'dir': 'build\/lib' }
+let g:ctrlp_custom_ignore = { 'file': '\.html$\|\.so$\|\.pyc$', 'dir': 'build\/lib\|vendor$' }
 
 " don't update the gitgutter unless saving a buffer
 let g:gitgutter_realtime = 0
@@ -158,16 +162,9 @@ noremap k gk
 set backupdir=~/.vim-tmp
 set directory=~/.vim-tmp
 
-"syntastic settings
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open=1
-let g:syntastic_error_symbol="✗"
-let g:syntastic_warning_symbol="⚠"
-let g:syntastic_style_error_symbol="⚠"
-let g:syntastic_style_warning_symbol="⚠"
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args=''
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+" vim-gitgutter remapping
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 
 function! Convert4SpaceTo2Space()

@@ -6,6 +6,7 @@
 [core]
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
+    untrackedCache = true
 #   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color]
     ui = auto
@@ -34,7 +35,12 @@
     ci = commit
     pom = push origin master
     rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
+    rmbranchalt = "!f(){ git branch -d ${1} && git push reaperhulk --delete ${1}; };f"
 [gitreview]
     username = reaperhulk
-#[init]
-#    templatedir = ~/.git_template
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckObjects = true
