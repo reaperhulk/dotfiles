@@ -30,6 +30,11 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Disable smart quotes and dash replacement
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# Disable "Play user interface sound effects"
+defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false
 
 
 # Enabling the Develop menu and the Web Inspector in Safari
