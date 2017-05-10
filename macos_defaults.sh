@@ -39,6 +39,8 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 # Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+# Show the status bar in the lower corner when hovering links
+defaults write com.apple.Safari ShowOverlayStatusBar -bool true
 
 
 # Automatically hide and show the Dock
