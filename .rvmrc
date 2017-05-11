@@ -1,2 +1,0 @@
-cpus=`sysctl -n hw.ncpu`
-rvm_make_flags="-j$cpus"
