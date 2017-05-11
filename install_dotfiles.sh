@@ -28,6 +28,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -sf $CWD/.aliases ~/.aliases
     ln -sf $CWD/.bash_profile ~/.bash_profile
     ln -sf $CWD/.bash_prompt ~/.bash_prompt
+    ln -sf $CWD/.bash_touchbar ~/.bash_touchbar
     ln -sf $CWD/.bashrc ~/.bashrc
     ln -sf $CWD/.exports ~/.exports
     ln -sf $CWD/.secrets ~/.secrets

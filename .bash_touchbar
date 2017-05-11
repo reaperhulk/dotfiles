@@ -1,0 +1,91 @@
+# Adapted from https://github.com/iam4x/zsh-iterm-touchbar
+GIT_UNCOMMITTED="${GIT_UNCOMMITTED:-+}"
+GIT_UNSTAGED="${GIT_UNSTAGED:-!}"
+GIT_UNTRACKED="${GIT_UNTRACKED:-?}"
+GIT_UNPULLED="${GIT_UNPULLED:-⇣}"
+GIT_UNPUSHED="${GIT_UNPUSHED:-⇡}"
+
+# Output name of current branch.
+function git_current_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
+# Uncommitted changes.
+# Check for uncommitted changes in the index.
+function git_uncomitted() {
+  if ! $(git diff --quiet --ignore-submodules --cached); then
+    echo -n "${GIT_UNCOMMITTED}"
+  fi
+}
+
+# Unstaged changes.
+# Check for unstaged changes.
+function git_unstaged() {
+  if ! $(git diff-files --quiet --ignore-submodules --); then
+    echo -n "${GIT_UNSTAGED}"
+  fi
+}
+
+# Untracked files.
+# Check for untracked files.
+function git_untracked() {
+  if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+    echo -n "${GIT_UNTRACKED}"
+  fi
+}
+
+# Unpushed and unpulled commits.
+# Get unpushed and unpulled commits from remote and draw arrows.
+# TODO: broken
+function git_unpushed_unpulled() {
+  # check if there is an upstream configured for this branch
+  command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
+
+  local count
+  count="$(command git rev-list --left-right --count HEAD...@'{u}' 2>/dev/null)"
+  # exit if the command failed
+  (( !$? )) || return
+
+  # counters are tab-separated, split on tab and store as array
+  count=(${(ps:\t:)count})
+  local arrows left=${count[1]} right=${count[2]}
+
+  (( ${right:-0} > 0 )) && arrows+="${GIT_UNPULLED}"
+  (( ${left:-0} > 0 )) && arrows+="${GIT_UNPUSHED}"
+
+  [ -n $arrows ] && echo -n "${arrows}"
+}
+
+
+function _clearTouchbar() {
+  echo -ne "\033]1337;PopKeyLabels\a"
+}
+
+function _update_touch_bar() {
+  _clearTouchbar
+
+  if [[ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]]; then
+
+    # String of indicators
+    local indicators=''
+
+    indicators+="$(git_uncomitted)"
+    indicators+="$(git_unstaged)"
+    indicators+="$(git_untracked)"
+    #indicators+="$(git_unpushed_unpulled)"
+
+    [ -n "${indicators}" ] && touchbarIndicators="🔥[${indicators}]" || touchbarIndicators="🙌";
+
+    echo -ne "\033]1337;SetKeyLabel=F1=🎋 $(git_current_branch)\a"
+    echo -ne "\033]1337;SetKeyLabel=F2=$touchbarIndicators\a"
+    #echo -ne "\033]1337;SetKeyLabel=F3=✉️ push\a";
+  fi
+}
+PROMPT_COMMAND="_update_touch_bar"

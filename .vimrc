@@ -22,6 +22,9 @@ set lcs=tab:▸\ ,trail:·
 set list
 " Show the filename in the window titlebar
 set title
+" sets the window title to blank on exit. fixes Thanks for flying vim in
+" iterm2
+set titleold=
 filetype off "for some reason vundle needs this off
 
 " Vundle config

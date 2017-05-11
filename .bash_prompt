@@ -41,4 +41,5 @@ function parse_git_branch() {
 }
 
 #PS1="\[${BOLD}${MAGENTA}\]\u\[$WHITE\]⌁\[$ORANGE\]\h\[$WHITE\] \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"∮ \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] ∴ \[$RESET\]"
-PS1="\[$ORANGE\]\h\[$WHITE\] \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"∮ \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] ∴ \[$RESET\]"
+#PS1="\[$ORANGE\]\h\[$WHITE\] \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"∮ \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] ∴ \[$RESET\]"
+PS1="\[$ORANGE\]\h\[$WHITE\] \[$GREEN\]\w ∴ \[$RESET\]"
