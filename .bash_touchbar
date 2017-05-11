@@ -54,8 +54,8 @@ function git_unpushed_unpulled() {
   (( !$? )) || return
 
   # counters are tab-separated, split on tab and store as array
-  count=(${(ps:\t:)count})
-  local arrows left=${count[1]} right=${count[2]}
+  read -r -a count -d '\t' <<< "$count"
+  local arrows left=${count[0]} right=${count[1]}
 
   (( ${right:-0} > 0 )) && arrows+="${GIT_UNPULLED}"
   (( ${left:-0} > 0 )) && arrows+="${GIT_UNPUSHED}"
@@ -79,13 +79,12 @@ function _update_touch_bar() {
     indicators+="$(git_uncomitted)"
     indicators+="$(git_unstaged)"
     indicators+="$(git_untracked)"
-    #indicators+="$(git_unpushed_unpulled)"
+    indicators+="$(git_unpushed_unpulled)"
 
     [ -n "${indicators}" ] && touchbarIndicators="🔥[${indicators}]" || touchbarIndicators="🙌";
 
     echo -ne "\033]1337;SetKeyLabel=F1=🎋 $(git_current_branch)\a"
     echo -ne "\033]1337;SetKeyLabel=F2=$touchbarIndicators\a"
-    #echo -ne "\033]1337;SetKeyLabel=F3=✉️ push\a";
   fi
 }
 PROMPT_COMMAND="_update_touch_bar"
