@@ -15,6 +15,7 @@ brew 'pyenv-virtualenvwrapper'
 brew 'rust'
 brew 'the_silver_searcher'
 brew 'vim'
+brew 'youtube-dl'
 mas 'Airmail 3', id: 918858936
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Pixelmator', id: 407963104
