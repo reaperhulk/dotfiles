@@ -72,8 +72,6 @@ function _clearTouchbar() {
 }
 
 function _update_touch_bar() {
-  _clearTouchbar
-
   if [[ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]]; then
 
     # String of indicators
@@ -88,6 +86,10 @@ function _update_touch_bar() {
 
     echo -ne "\033]1337;SetKeyLabel=F1=🎋 $(git_current_branch)\a"
     echo -ne "\033]1337;SetKeyLabel=F2=$touchbarIndicators\a"
+  else
+    # clear the touch bar when there's no git repo. This prevents flicker
+    _clearTouchbar
   fi
+
 }
 PROMPT_COMMAND="_update_touch_bar"
