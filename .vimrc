@@ -124,7 +124,7 @@ autocmd BufWritePre * :%s/\s\+$//e "remove trailing spaces on saves
 let &showbreak=repeat(' ', 2) "add some indentation to wrapped lines
 
 " statusline {{{
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 " }}}

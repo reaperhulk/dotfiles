@@ -2,6 +2,9 @@ set go-=T
 set transparency=10
 set background=dark
 colorscheme solarized
+" We only use a powerline font in macvim, so this is disabled
+" in vimrc and enabled in gvimrc
+let g:airline_powerline_fonts=1
 " make the solarized sign column the same as the line number
 highlight SignColumn guibg=#073642
 " vim-gitgutter will use Sign Column to set its color, reload it.
