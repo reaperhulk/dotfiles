@@ -1,5 +1,7 @@
 # ~/.secrets can be used for settings you don’t want to commit
-for file in ~/.{bash_prompt,exports,aliases,functions,secrets,bash_touchbar}; do
+# bash_touchbar must be before bash_prompt because the PROMPT_COMMAND
+# in bash_prompt uses a function from bash_touchbar
+for file in ~/.{bash_touchbar,bash_prompt,exports,aliases,functions,secrets}; do
   [ -r "$file" ] && source "$file"
 done
 unset file

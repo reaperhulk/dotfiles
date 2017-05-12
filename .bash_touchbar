@@ -92,4 +92,4 @@ function _update_touch_bar() {
   fi
 
 }
-PROMPT_COMMAND="_update_touch_bar"
+# PROMPT_COMMAND resides in .bash_prompt
