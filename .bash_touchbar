@@ -1,3 +1,6 @@
+# This could potentially be made substantially faster by using
+# git status --porcelain. It won't replace all calls to git, but
+# should work for uncommitted, unstaged, and untracked.
 # Adapted from https://github.com/iam4x/zsh-iterm-touchbar
 GIT_UNCOMMITTED="${GIT_UNCOMMITTED:-+}"
 GIT_UNSTAGED="${GIT_UNSTAGED:-!}"
@@ -19,7 +22,7 @@ function git_current_branch() {
 
 # Uncommitted changes.
 # Check for uncommitted changes in the index.
-function git_uncomitted() {
+function git_uncommitted() {
   if ! $(git diff --quiet --ignore-submodules --cached); then
     echo -n "${GIT_UNCOMMITTED}"
   fi
@@ -76,7 +79,7 @@ function _update_touch_bar() {
     # String of indicators
     local indicators=''
 
-    indicators+="$(git_uncomitted)"
+    indicators+="$(git_uncommitted)"
     indicators+="$(git_unstaged)"
     indicators+="$(git_untracked)"
     indicators+="$(git_unpushed_unpulled)"

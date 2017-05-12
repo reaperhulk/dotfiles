@@ -1,6 +1,5 @@
-# Load ~/.bash_prompt, ~/.exports, ~/.aliases, ~/.functions and ~/.extra
-# ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{bash_prompt,exports,aliases,functions,extra,secrets,bash_touchbar}; do
+# ~/.secrets can be used for settings you don’t want to commit
+for file in ~/.{bash_prompt,exports,aliases,functions,secrets,bash_touchbar}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -24,12 +23,12 @@ complete -d cd rmdir
 
 # init pyenv
 if type pyenv >/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init - --no-rehash)"
     pyenv virtualenvwrapper_lazy
 fi
 
 #add rvm if it's there
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
 source ~/.git-completion.sh
 
