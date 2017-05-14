@@ -17,7 +17,7 @@ function timer_start {
 function timer_stop {
   the_seconds=$(($SECONDS - $timer))
   if [[ $the_seconds > 1 ]]; then
-    TIMER_DISPLAY="${the_seconds}s "
+    TIMER_DISPLAY="⌛️ "$the_seconds"s"$'\n'
   else
     TIMER_DISPLAY=''
   fi
@@ -28,4 +28,4 @@ trap 'timer_start' DEBUG
 
 PROMPT_COMMAND="_update_touch_bar;timer_stop"
 
-PS1='\[$PURPLE\]$TIMER_DISPLAY\[$ORANGE\]\h \[$YELLOW\]\w ∴ \[$RESET\]'
+PS1='\[$PURPLE\]${TIMER_DISPLAY}\[$ORANGE\]\h \[$YELLOW\]\w ∴ \[$RESET\]'
