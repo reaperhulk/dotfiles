@@ -16,6 +16,8 @@ set softtabstop=4
 set shiftwidth=4
 set ttimeoutlen=50      " set timeout length when hitting escape (prevents pause when leaving insert mode with vim-airline)
 set ttyfast
+" vim-gitgutter uses updatetime to determine when to trigger async updates
+set updatetime=250
 set encoding=utf-8 nobomb
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·
@@ -81,10 +83,6 @@ call vundle#end()
 
 " ignore html and so files for ctrl-p
 let g:ctrlp_custom_ignore = { 'file': '\.html$\|\.so$\|\.pyc$', 'dir': 'build\/lib\|vendor$' }
-
-" don't update the gitgutter unless saving a buffer
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
 
 " ident guide flags
 let g:indent_guides_exclude_filetypes = ['nerdtree']
