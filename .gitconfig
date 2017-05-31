@@ -7,7 +7,7 @@
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
     untrackedCache = true
-#   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
     ui = auto
 [color "branch"]

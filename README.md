@@ -18,5 +18,5 @@ This will create symlinks, not copy. You can then update with a fresh git pull a
 You will need to separately install vundle and then run `:PluginInstall` before vim will
 work properly.
 
-##Requirements
-* Brew
+## Requirements
+* Have homebrew installed before you run any of this...
