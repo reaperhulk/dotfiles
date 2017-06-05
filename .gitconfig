@@ -35,6 +35,7 @@
     ci = commit
     pom = push origin master
     rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
+    rmbranchforce = "!f(){ git branch -D ${1} && git push origin --delete ${1}; };f"
     rmbranchalt = "!f(){ git branch -d ${1} && git push reaperhulk --delete ${1}; };f"
 [gitreview]
     username = reaperhulk

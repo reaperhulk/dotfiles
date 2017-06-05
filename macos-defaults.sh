@@ -23,16 +23,13 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-# Disable smart dashes as they’re annoying when typing code
+# Disable smart dashes, quotes, and period subsitution, but you'll still have to disable
+# them in edit->substitutions in Messages
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-# Disable smart quotes and dash replacement
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Disable "Play user interface sound effects"
 defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false
 
