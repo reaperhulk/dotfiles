@@ -72,6 +72,7 @@ function git_unpushed_unpulled() {
 
 function _clearTouchbar() {
   echo -ne "\033]1337;PopKeyLabels\a"
+    bind '"\eOQ":""'
 }
 
 function _update_touch_bar() {
@@ -88,6 +89,7 @@ function _update_touch_bar() {
     [ -n "${indicators}" ] && touchbarIndicators="🔥[${indicators}]" || touchbarIndicators="🙌";
 
     echo -ne "\033]1337;SetKeyLabel=F1=🍃 $(git_current_branch)\a"
+    bind '"\eOQ":"git status\n"'
     echo -ne "\033]1337;SetKeyLabel=F2=$touchbarIndicators\a"
   else
     # clear the touch bar when there's no git repo. This prevents flicker

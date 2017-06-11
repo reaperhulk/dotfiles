@@ -18,5 +18,7 @@ This will create symlinks, not copy. You can then update with a fresh git pull a
 You will need to separately install vundle and then run `:PluginInstall` before vim will
 work properly.
 
+iTerm2 config requires https://coderwall.com/p/h6yfda/use-and-to-jump-forwards-backwards-words-in-iterm-2-on-os-x
+
 ## Requirements
 * Have homebrew installed before you run any of this...
