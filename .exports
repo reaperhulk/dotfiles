@@ -24,3 +24,7 @@ export PATH="/Users/pkehrer/.cargo/bin:~/Applications/bin:/usr/local/bin:/usr/lo
 export PYTHONDONTWRITEBYTECODE=1
 
 export GOPATH=$HOME/code/gopath
+
+# GnuPG2 + git commit signing needs this set to work
+# see: https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
+export GPG_TTY=$(tty)
