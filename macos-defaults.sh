@@ -57,6 +57,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Add bluetooth icon to the menubar
+open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu
 
 killall Dock
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
