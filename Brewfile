@@ -1,6 +1,7 @@
 brew 'cmake'
 brew 'diff-so-fancy'
 brew 'enchant'
+brew 'ffmpeg'
 brew 'git'
 brew 'gnupg'
 brew 'go'
