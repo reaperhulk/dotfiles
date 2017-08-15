@@ -39,4 +39,4 @@ alias plistbuddy="/usr/libexec/PlistBuddy"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -m '$method'"; done
 
 # Latest 4.x version info is at http://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads
-alias workvpn='sudo openconnect $WORK_VPN_ENDPOINT --useragent "Cisco AnyConnect VPN Agent for Windows 4.4.03034" --os win'
+alias workvpn='sudo openconnect $WORK_VPN_ENDPOINT --useragent "Cisco AnyConnect VPN Agent for Windows 4.5.01044" --os win'
