@@ -37,6 +37,7 @@
     rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
     rmbranchforce = "!f(){ git branch -D ${1} && git push origin --delete ${1}; };f"
     rmbranchalt = "!f(){ git branch -d ${1} && git push reaperhulk --delete ${1}; };f"
+    recentbranches = branch --sort=-committerdate
 [gitreview]
     username = reaperhulk
 [transfer]
