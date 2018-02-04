@@ -40,3 +40,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-re
 
 # Latest 4.x version info is at http://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads
 alias workvpn='sudo openconnect $WORK_VPN_ENDPOINT --useragent "Cisco AnyConnect VPN Agent for Windows 4.5.01044" --os win'
+# For those times where you need to get into the host VM for your docker.
+# ctrl-A, ctrl-\ to exit
+alias hostdocker='screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty'
