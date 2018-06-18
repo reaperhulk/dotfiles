@@ -5,3 +5,4 @@ htmlcov
 .pypirc
 .secrets
 .vscode
+.pytest_cache

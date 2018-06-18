@@ -43,3 +43,4 @@ alias workvpn='sudo openconnect $WORK_VPN_ENDPOINT --useragent "Cisco AnyConnect
 # For those times where you need to get into the host VM for your docker.
 # ctrl-A, ctrl-\ to exit
 alias hostdocker='screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty'
+alias gitstagenowhitespace='git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero'

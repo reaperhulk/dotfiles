@@ -22,3 +22,7 @@ function play {
                --format="bestaudio[ext!=webm]" \
                --exec=afplay "$*"
 }
+
+function zelda {
+    youtube-dl -f 22 "$1"
+}
