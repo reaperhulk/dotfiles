@@ -38,9 +38,12 @@ alias plistbuddy="/usr/libexec/PlistBuddy"
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -m '$method'"; done
 
-# Latest 4.x version info is at http://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads
-alias workvpn='sudo openconnect $WORK_VPN_ENDPOINT --useragent "Cisco AnyConnect VPN Agent for Windows 4.5.01044" --os win'
 # For those times where you need to get into the host VM for your docker.
 # ctrl-A, ctrl-\ to exit
 alias hostdocker='screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty'
 alias gitstagenowhitespace='git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero'
+
+alias restartjenkinsforalex='ssh root@ci.cryptography.io "systemctl restart jenkins"'
+
+alias rg='rg --smart-case'
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'

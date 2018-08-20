@@ -25,10 +25,9 @@ brew 'terraform'
 brew 'vim'
 brew 'youtube-dl'
 mas 'Airmail 3', id: 918858936
-mas 'Microsoft Remote Desktop', id: 715768417
+mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Pixelmator', id: 407963104
 mas 'Textual 7', id: 1262957439
-mas 'Tweetbot', id: 557168941
 mas 'WeChat', id: 836500024
 mas 'Xcode', id: 497799835
 tap 'caskroom/cask'

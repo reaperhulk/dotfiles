@@ -14,6 +14,7 @@ set cursorline
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set nofoldenable
 set ttimeoutlen=50      " set timeout length when hitting escape (prevents pause when leaving insert mode with vim-airline)
 set ttyfast
 " vim-gitgutter uses updatetime to determine when to trigger async updates
@@ -54,8 +55,6 @@ Plugin 'matchit.zip'
 Plugin 'tpope/vim-commentary'
 " adds gutter for added/changed/deleted lines
 Plugin 'airblade/vim-gitgutter'
-" ag search (requires ag)
-Plugin 'rking/ag.vim'
 
 " rust language support
 Plugin 'wting/rust.vim'
@@ -63,9 +62,6 @@ Plugin 'wting/rust.vim'
 Plugin 'fatih/vim-go'
 " up to date markdown syntax
 Plugin 'tpope/vim-markdown'
-" clojure stuff
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-leiningen'
 
 " groovy
 Plugin 'rdolgushin/groovy.vim'
