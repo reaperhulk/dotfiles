@@ -1,11 +1,13 @@
 #!/bin/bash
 #This file will symlink the dotfiles from this directory to your home dir.
-#You can use this to leave your dotfiles in dropbox to sync between machines
+#You can use this to leave your dotfiles elsewhere to sync between machines
 read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     cd $(dirname "$0")
     CWD=`pwd`
+    # alias the dotfiles dir so I don't have to remember where it is.
+    ln -sf "$CWD" ~/.dotfiles
     #bash files
     ln -sf "$CWD/.aliases" ~/.aliases
     ln -sf "$CWD/.bash_profile" ~/.bash_profile
