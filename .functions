@@ -23,6 +23,12 @@ function play {
                --exec=afplay "$*"
 }
 
+function zeldabest {
+    (cd ~/videos && youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] "$1")
+}
 function zelda {
-    youtube-dl -f 22 "$1"
+    (cd ~/videos && youtube-dl -f 22 "$1")
+}
+function activate_java8 {
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home"
 }

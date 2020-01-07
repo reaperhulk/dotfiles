@@ -47,3 +47,4 @@ alias restartjenkinsforalex='ssh root@ci.cryptography.io "systemctl restart jenk
 
 alias rg='rg --smart-case'
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias books='cd ~/Library/Mobile\ Documents/iCloud\~com\~apple\~iBooks/Documents/'

@@ -32,3 +32,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 source ~/.git-completion.sh
 
 hist import
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# yay catalina
+export BASH_SILENCE_DEPRECATION_WARNING=1

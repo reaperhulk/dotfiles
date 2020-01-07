@@ -1,4 +1,5 @@
 brew 'automake'
+brew 'bat'
 brew 'ccextractor'
 brew 'clang-format'
 brew 'diff-so-fancy'
@@ -8,26 +9,30 @@ brew 'gnupg'
 brew 'go'
 brew 'godep'
 brew 'historian'
+brew 'llvm'
+brew 'magic-wormhole'
 brew 'mas'
 brew 'mercurial'
 brew 'mkvtoolnix'
-brew 'node'
-brew 'openssl@1.1'
-brew 'openssl'
+brew 'node' brew 'openssl@1.1'
 brew 'pyenv'
 brew 'pyenv-virtualenvwrapper'
 brew 'pypy3'
 brew 'ripgrep'
-brew 'rust'
+brew 'rustup-init'
 brew 'shellcheck'
+brew 'sloccount'
+brew 'trash'
+brew 'unrar'
 brew 'vim'
 brew 'youtube-dl'
+mas 'AdGuard for Safari', id: 1440147259
 mas 'Airmail 3', id: 918858936
-mas 'Microsoft Remote Desktop', id: 1295203466
-mas 'PiPifier', id: 1160374471
-mas 'Pixelmator', id: 407963104
-mas 'Textual 7', id: 1262957439
-mas 'WeChat', id: 836500024
+mas 'Pixelmator Pro', id: 1289583905
+mas 'Slack', id: 803453959
+mas 'Tweetbot', id: 1384080005
+mas 'The Unarchiver', id: 425424353
+mas 'WireGuard', id: 1451685025
 mas 'Xcode', id: 497799835
 tap 'caskroom/cask'
 tap 'caskroom/versions'
@@ -44,24 +49,19 @@ cask 'firefox'
 cask 'google-chrome'
 cask 'imageoptim'
 cask 'intel-power-gadget' # used with istat
+cask 'irccloud'
 cask 'istat-menus'
-cask 'iterm2-nightly'
+cask 'iterm2'
 cask 'java'
 cask 'macvim'
 cask 'microsoft-office'
-cask 'openemu'
-cask 'origin'
 cask 'paw'
 cask 'sabnzbd'
-cask 'safari-technology-preview'
-cask 'signal'
+cask 'sage'
 cask 'skype'
-cask 'slack'
 cask 'steam'
-cask 'torbrowser'
 cask 'transmission'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'vmware-fusion'
 cask 'wireshark'
-cask 'zoomus'

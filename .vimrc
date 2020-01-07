@@ -66,6 +66,9 @@ Plugin 'tpope/vim-markdown'
 " groovy
 Plugin 'rdolgushin/groovy.vim'
 
+" typescript
+Plugin 'leafgarland/typescript-vim'
+
 " colorscheme bundle
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/Impact'
@@ -156,8 +159,8 @@ noremap k gk
 
 "sets a backup dir to prevent ~ and .swp files from being generated in the
 "same directory as the edited file.
-set backupdir=~/.vim-tmp
-set directory=~/.vim-tmp
+set backupdir=~/.vim-tmp//
+set directory=~/.vim-tmp//
 
 " vim-gitgutter remapping
 nmap ]h <Plug>GitGutterNextHunk
